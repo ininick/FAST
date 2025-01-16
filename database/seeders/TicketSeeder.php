@@ -19,7 +19,7 @@ class TicketSeeder extends Seeder
         $dateString = now()->format('dmy');
         $counter = 1;
 
-        for ($i = 1; $i <= 7; $i++) {
+        for ($i = 1; $i <= 9; $i++) {
             $ticketDetailsId = $dateString . str_pad($counter, 3, '0', STR_PAD_LEFT);
             if (DB::table('tickets')->where('id', $i)->doesntExist()) {
                 DB::table('tickets')->insert([

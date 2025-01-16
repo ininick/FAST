@@ -20,7 +20,9 @@ class TicketDetailsSeeder extends Seeder
             ['name' => 'Kendala Fitur D', 'description' => 'Ada kendala pada fitur D', 'fulfillment' => 'Fitur D sedang dihandle oleh tim Y'],
             ['name' => 'Kendala Fitur E', 'description' => 'Ada kendala pada fitur E', 'fulfillment' => 'Fitur E sudah diperbaiki oleh tim Z'],
             ['name' => 'Kendala Fitur F', 'description' => 'Ada kendala pada fitur F', 'fulfillment' => 'Fitur F sedang dihandle oleh tim W'],
-            ['name' => 'Kendala Fitur G', 'description' => 'Ada kendala pada fitur G', 'fulfillment' => 'Fitur G sudah diperbaiki oleh tim V']
+            ['name' => 'Kendala Fitur G', 'description' => 'Ada kendala pada fitur G', 'fulfillment' => 'Fitur G sudah diperbaiki oleh tim V'],
+            ['name' => 'Kendala Fitur H', 'description' => 'Ada kendala pada fitur H', 'fulfillment' => 'Fitur H sudah diperbaiki oleh tim A'],
+            ['name' => 'Kendala Fitur I', 'description' => 'Ada kendala pada fitur I', 'fulfillment' => 'Fitur I sudah diperbaiki oleh tim F']
         ];
 
         $date = now();

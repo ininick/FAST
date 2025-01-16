@@ -15,7 +15,7 @@ class EscalationSeeder extends Seeder
     {
         $levels = ['1', '2', '3', 'Breach'];
 
-        for ($i = 1; $i <= 7; $i++) {
+        for ($i = 1; $i <= 9; $i++) {
             if (DB::table('escalations')->where('ticket_id', $i)->where('type', 0)->doesntExist()) {
                 DB::table('escalations')->insert([
                     'ticket_id' => $i,

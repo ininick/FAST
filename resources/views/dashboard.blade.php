@@ -10,6 +10,7 @@ body {
     overflow-y: auto;
     height: 70vh;
     scrollbar-width: none;
+    border: #79D7BE 10px solid;
     /* For Firefox */
 }
 
@@ -18,8 +19,8 @@ body {
     /* For Chrome, Safari, and Opera */
 }
 
-.card-body {
-    border-radius: 15px !important;
+.card-rounded {
+    border-radius: 20px !important;
 }
 
 .card-content {
@@ -83,7 +84,7 @@ FAST - Dashboard
         <div class="row">
             @foreach ($tickets as $ticket)
             <div class="col-md-3 mb-4">
-                <div class="card h-100 
+                <div class="card  card-rounded h-100 
                     @if($ticket->status == 'Submitted') card-submitted 
                     @elseif($ticket->status == 'Approved') card-approved 
                     @elseif($ticket->status == 'Waiting for Customer') card-waiting 
