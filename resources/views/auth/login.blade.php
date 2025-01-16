@@ -38,7 +38,7 @@ body {
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group">
-                        <label for="username">Username:</label>
+                        <label for="username">Udomain:</label>
                         <input type="text" class="text-form form-control mt-2 mb-3" id="username" name="username"
                             required>
                     </div>
@@ -46,6 +46,9 @@ body {
                         <label for="password">Password:</label>
                         <input type="password" class="text-form form-control mt-2 mb-3" id="password" name="password"
                             required>
+                        @if ($errors->has('login'))
+                        <span class="text-danger">{{ $errors->first('login') }}</span>
+                        @endif
                     </div>
                     <div class="form-group mt-3">
                         <button type="submit" class="btn btn-login w-100 mt-3">LOGIN</button>

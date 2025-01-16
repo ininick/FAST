@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+
     public function showLoginForm()
     {
         return view('auth.login');
@@ -17,18 +18,24 @@ class AuthController extends Controller
         $credentials = $request->only('username', 'password');
 
         if (Auth::attempt($credentials)) {
-            // Authentication passed...
-            return redirect()->intended('dashboard');
+            $request->session()->regenerate(); // Create session token
+            return redirect()->route('dashboard');
         }
 
         return back()->withErrors([
-            'username' => 'The provided credentials do not match our records.',
+            'login' => 'Invalid credentials. Contact your administrator.',
         ]);
     }
 
-    public function logout()
+    public function testing() {
+        return view('halaman');
+    }
+
+    public function logout(Request $request)
     {
         Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken(); // Destroy session token
         return redirect('/login');
     }
 }
