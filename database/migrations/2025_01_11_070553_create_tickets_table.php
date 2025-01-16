@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('customer_id');
             $table->unsignedBigInteger('owner_id');
-            $table->unsignedBigInteger('ticket_details_id');
+            $table->string('ticket_details_id');
             $table->foreign('customer_id')->references('id')->on('users');
             $table->foreign('owner_id')->references('id')->on('users');
             $table->foreign('ticket_details_id')->references('id')->on('ticket_details')->onDelete('cascade');
@@ -23,6 +23,10 @@ return new class extends Migration
             $table->string('urgency');
             $table->string('escalation');
             $table->timestamps();
+        });
+
+        Schema::table('ticket_details', function (Blueprint $table) {
+            $table->string('id')->change();
         });
     }
 

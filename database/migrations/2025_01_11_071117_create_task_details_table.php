@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('task_details', function (Blueprint $table) {
-            $table->id();
+            $table->string('id')->primary();
             $table->unsignedBigInteger('created_by_id');
             $table->unsignedBigInteger('modified_by_id');
             $table->unsignedBigInteger('resolved_by_id');
@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('description')->nullable();
             $table->string('fulfillment')->nullable();
-            $table->string('escalation');
             $table->timestamp('created_time')->useCurrent();
             $table->timestamp('updated_time')->useCurrentOnUpdate();
             $table->timestamp('resolved_time')->nullable();

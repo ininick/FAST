@@ -12,11 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ticket_details', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
+            $table->string('id')->primary();
+            $table->string(column: 'name');
             $table->string('description')->nullable();
             $table->string('fulfillment');
-            $table->string('escalation');
             $table->timestamp('created_time')->useCurrent();
             $table->timestamp('updated_time')->useCurrentOnUpdate();
             $table->timestamp('resolved_time')->nullable();

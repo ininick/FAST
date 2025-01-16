@@ -15,4 +15,6 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::post('/dashboard', [DashboardController::class,'dashboard'])->name('dashboard');
+Route::post('/dashboard', function () {
+    return redirect()->route('dashboard');
+});

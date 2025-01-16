@@ -37,23 +37,21 @@
     }
 
     main {
-        width: 80vw;
+        width: calc(100vw - 20vw);
         margin-left: 20vw;
         overflow-y: auto;
         /* padding-top: 56px; */
         /* Adjust based on header height */
     }
 
-    header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
+    .login-page main {
+        width: 100vw;
+        margin-left: 0;
     }
     </style>
 </head>
 
-<body>
+<body class="{{ Request::path() == 'login' ? 'login-page' : '' }}">
     <header>
         @yield('header')
     </header>
@@ -68,7 +66,7 @@
         </main>
     </div>
     @else
-    <main>
+    <main class="login-page">
         @yield('content')
     </main>
     @endif

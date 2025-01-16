@@ -20,6 +20,7 @@ return new class extends Migration
             
             $table->boolean('parent_type'); // 0 - ticket, 1 - task
             $table->boolean('type'); // 0 - response, 1 - fulfillment
+            $table->enum('level', ['1','2','3','Breach'])->default('1');
             $table->timestamp('time_left');      
             $table->timestamps();      
         });
